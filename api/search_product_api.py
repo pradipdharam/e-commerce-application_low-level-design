@@ -1,4 +1,4 @@
-from typing import Final
+from typing import Final, List
 
 
 class SearchProductAPI:
@@ -7,6 +7,7 @@ class SearchProductAPI:
     def __init__(self, product_searcher):
         self.__product_searcher = product_searcher
 
-    def search(self, product_name: str, filter_details: FilterDetails):
+    def search(self, product_name: str,
+               filter_details: FilterDetails) -> List[Product]:
         pass
 
