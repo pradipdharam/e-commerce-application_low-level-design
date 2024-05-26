@@ -16,6 +16,6 @@ class PayOnDeliverFilter(ProductFilter):
         filtered_products = self.__next_filter.filter(products)
         final_products = []
         for product in filtered_products:
-            if product.pay_on_delivery:
+            if product.pay_on_delivery is self.__is_pay_on_delivery:
                 final_products.append(product)
         return final_products
