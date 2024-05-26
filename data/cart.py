@@ -27,9 +27,12 @@ class Cart:
         return amount
 
     @property
-    def distinct_item_count(self) -> float:
+    def distinct_item_count(self) -> int:
         distinct_ids = set()
         for copy in self.__products:
             distinct_ids.add(copy.id)
         return len(distinct_ids)
 
+    @property
+    def total_item_count(self) -> int:
+        return len(self.__products)

@@ -2,7 +2,7 @@ from typing import Union
 
 from data import ProductCopy
 from data.user import User
-from permission import Permission, SearchProductPermission
+from permission import Permission, SearchProductPermission, AddToCartPermission
 
 
 class PermissionFactory:
@@ -21,4 +21,4 @@ class PermissionFactory:
             -> Union[None, Permission]:
         # Query DB & retrieve permission the user is associated with.
         # construct and return permission.
-        return None
+        return AddToCartPermission()
