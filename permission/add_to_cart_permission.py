@@ -1,6 +1,6 @@
 from typing import Final
 
-from data import User
+from data import User, ProductCopy
 from manager import CartManager
 from permission import Permission
 
@@ -11,9 +11,11 @@ class AddToCartPermission(Permission):
     TOTAL_ITEMS_LIMIT = 1000
 
     __user: Final[User]
+    __product_copy: Final[ProductCopy]
 
-    def __init__(self, user: User):
+    def __init__(self, user: User, product_copy: ProductCopy):
         self.__user = user
+        self.__product_copy = product_copy
 
     def is_permitted(self) -> bool:
         cart = CartManager.get_cart(self.__user)
