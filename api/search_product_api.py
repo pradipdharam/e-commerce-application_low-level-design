@@ -11,5 +11,5 @@ class SearchProductAPI:
 
     def search(self, product_name: str,
                filter_details: FilterDetails) -> List[Product]:
-        pass
+        products = DBAccessor.get_products_by_name(product_name)
 
