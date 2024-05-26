@@ -1,0 +1,2 @@
+class PickUpDetails:
+    pass

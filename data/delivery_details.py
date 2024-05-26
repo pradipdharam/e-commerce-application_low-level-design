@@ -1,0 +1,2 @@
+class DeliveryDetails:
+    pass

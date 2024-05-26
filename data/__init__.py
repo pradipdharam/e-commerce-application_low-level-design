@@ -6,3 +6,7 @@ from .user import User
 from .cart import Cart
 from .address import Address
 from .order import Order
+from .delivery_details import DeliveryDetails
+from .order_status_details import OrderStatusDetails
+from .pick_up_details import PickUpDetails
+from .transit_details import TransitDetails

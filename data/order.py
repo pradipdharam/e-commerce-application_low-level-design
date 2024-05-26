@@ -1,6 +1,7 @@
 from typing import Final
 
-from data import Cart, Address
+from data import Cart, Address, TransitDetails, OrderStatusDetails
+from order import OrderState
 
 
 class Order:
@@ -8,6 +9,7 @@ class Order:
     __cart: Final[Cart]
     __shipping_address: Final[Address]
     __billing_address: Final[Address]
+    order_state: OrderState
 
     def __init__(self, order_id: int, cart: Cart, shipping_address: Address,
                  billing_address: Address) -> None:
@@ -31,3 +33,18 @@ class Order:
     @property
     def billing_address(self):
         return self.__billing_address
+
+    def schedule_pick_up(self, pickup_details):
+        self.order_state.schedule_pickup(pickup_details)
+
+    def cancel(self):
+        self.order_state.cancel()
+
+    def pick_up(self):
+        self.order_state.pickup()
+
+    def end_transit(self, transit_details: TransitDetails):
+        self.order_state.end_transit(transit_details)
+
+    def get_order_details(self) -> OrderStatusDetails:
+        return self.order_state.get_status()
