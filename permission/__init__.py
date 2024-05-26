@@ -1,3 +1,4 @@
-from .permission import Permission
-from .search_product_permission import SearchProductPermission
 from .add_to_cart_permission import AddToCartPermission
+from .permission import Permission
+from .permission_factory import PermissionFactory
+from .search_product_permission import SearchProductPermission
