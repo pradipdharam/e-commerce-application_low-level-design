@@ -1,5 +1,7 @@
 from typing import Final, List
 
+from data import FilterDetails
+
 
 class SearchProductAPI:
     __product_searcher: Final[ProductSearcher]
