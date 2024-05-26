@@ -1,5 +1,7 @@
 from typing import Final, Union
 
+from data import Rating
+
 
 class FilterDetails:
     __price_filter: Final[Union[None, float]]
