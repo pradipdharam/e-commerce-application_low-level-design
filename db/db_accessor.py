@@ -12,3 +12,7 @@ class DBAccessor:
     @staticmethod
     def persist_cart( cart: Cart, user: User):
         pass
+
+    @classmethod
+    def check_out_cart(cls, cart, oder):
+        pass

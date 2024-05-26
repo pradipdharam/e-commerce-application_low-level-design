@@ -1,4 +1,4 @@
-from data import User, ProductCopy
+from data import User, ProductCopy, Order
 from db import DBAccessor
 
 
@@ -17,3 +17,6 @@ class CartManager:
         cart = self.get_cart(user)
         cart.remove(product_copy)
         DBAccessor.persist_cart(cart, user)
+
+    def check_out_cart(self, user: User, order: Order):
+        DBAccessor.check_out_cart(user, order)
