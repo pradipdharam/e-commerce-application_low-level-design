@@ -1,6 +1,6 @@
 from typing import Final, List
 
-from data import FilterDetails
+from data import FilterDetails, Product
 
 
 class SearchProductAPI:
@@ -12,4 +12,3 @@ class SearchProductAPI:
     def search(self, product_name: str,
                filter_details: FilterDetails) -> List[Product]:
         products = DBAccessor.get_products_by_name(product_name)
-

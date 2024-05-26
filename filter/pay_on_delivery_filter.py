@@ -13,4 +13,9 @@ class PayOnDeliverFilter(ProductFilter):
         self.__next_filter = next_filter
 
     def filter(self, products: List[Product]) -> List[Product]:
-        pass
+        filtered_products = self.__next_filter.filter(products)
+        final_products = []
+        for product in filtered_products:
+            if product.pay_on_delivery:
+                final_products.append(product)
+        return final_products
