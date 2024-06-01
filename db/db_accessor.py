@@ -1,4 +1,4 @@
-from data import Cart, User
+from data import Cart, User, Order
 
 
 class DBAccessor:
@@ -10,9 +10,13 @@ class DBAccessor:
         pass
 
     @staticmethod
-    def persist_cart( cart: Cart, user: User):
+    def persist_cart(cart: Cart, user: User):
         pass
 
-    @classmethod
-    def check_out_cart(cls, cart, oder):
+    @staticmethod
+    def check_out_cart(cart, oder):
+        pass
+
+    @staticmethod
+    def get_order_by_id(order_id: int) -> Order:
         pass

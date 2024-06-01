@@ -1,8 +1,8 @@
 from typing import Union
 
-from data import ProductCopy
+from data import ProductCopy, Order
 from data.user import User
-from permission import Permission, SearchProductPermission, AddToCartPermission
+from permission import Permission, SearchProductPermission, AddToCartPermission, TrackOrderPermission
 
 
 class PermissionFactory:
@@ -21,4 +21,11 @@ class PermissionFactory:
             -> Union[None, Permission]:
         # Query DB & retrieve permission the user is associated with.
         # construct and return permission.
-        return AddToCartPermission()
+        return AddToCartPermission(user, product_copy)
+
+    @staticmethod
+    def get_track_order_permission(order: Order, user: User) \
+            -> Union[None, Permission]:
+        # Query DB & retrieve permission the user is associated with.
+        # construct and return permission.
+        return TrackOrderPermission(order, user)

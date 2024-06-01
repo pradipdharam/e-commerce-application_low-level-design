@@ -2,3 +2,4 @@ from .add_to_cart_permission import AddToCartPermission
 from .permission import Permission
 from .permission_factory import PermissionFactory
 from .search_product_permission import SearchProductPermission
+from .track_order_permission import TrackOrderPermission
